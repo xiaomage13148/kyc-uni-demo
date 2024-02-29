@@ -1336,6 +1336,45 @@ var render = function () {
             },
             [_vm._v("仅活体检测")]
           ),
+          _c(
+            "v-uni-button",
+            {
+              staticClass: _vm._$g(14, "sc"),
+              attrs: { type: "primary", _i: 14 },
+              on: {
+                click: function ($event) {
+                  return _vm.$handleViewEvent($event)
+                },
+              },
+            },
+            [_vm._v("增強身份证对比")]
+          ),
+          _c(
+            "v-uni-button",
+            {
+              staticClass: _vm._$g(15, "sc"),
+              attrs: { type: "primary", _i: 15 },
+              on: {
+                click: function ($event) {
+                  return _vm.$handleViewEvent($event)
+                },
+              },
+            },
+            [_vm._v("增強自带对比源")]
+          ),
+          _c(
+            "v-uni-button",
+            {
+              staticClass: _vm._$g(16, "sc"),
+              attrs: { type: "primary", _i: 16 },
+              on: {
+                click: function ($event) {
+                  return _vm.$handleViewEvent($event)
+                },
+              },
+            },
+            [_vm._v("增強仅活体检测")]
+          ),
         ],
         1
       ),

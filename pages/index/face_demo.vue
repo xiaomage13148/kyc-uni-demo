@@ -177,7 +177,7 @@ export default {
               }, result => {
                 console.log('【uni log】face SDK callback ================> result.');
                 // TODO ---->打印【基础版】人脸核验 , 日期: 2024/2/29
-                console.log(`---->打印【基础版】人脸核验 , 当前时间是: ${new Date().toString()}` , result);
+                console.log(`---->打印【基础版】人脸核验 , 当前时间是: ${new Date().toString()}`, result);
 
                 //scene区分回调场景
                 let scene = result.scene;
@@ -243,10 +243,9 @@ export default {
             }
           },
         });
-      }else {
+      } else {
         let useAdvanceCompare;
-        if (compareType === compareTypeConstant.vivoDetectionOnly)
-        {
+        if (compareType === compareTypeConstant.vivoDetectionOnly) {
           useAdvanceCompare = false;
         } else {
           useAdvanceCompare = true;
@@ -297,16 +296,17 @@ export default {
                   useAdvanceCompare: useAdvanceCompare
                 }
               }, result => {
-                console.log("【uni log】face SDK callback ================> result.");
+                console.log('【uni log】face SDK callback ================> result.');
                 // TODO ---->打印【增强版】人脸核验 , 日期: 2024/2/29
-                console.log(`---->打印【增强版】人脸核验 , 当前时间是: ${new Date().toString()}` , result);
+                console.log(`---->打印【增强版】人脸核验 , 当前时间是: ${new Date().toString()}`, result);
                 //scene区分回调场景
                 let scene = result.scene;
                 //登录失败，可以通过error获得失败原因
                 if (scene === 'wb_face_callback_login_failure') {
                   let res = result.res;
                   let error = res.error;
-                  let tip = "登录失败:domain=" + error.domain + ",code=" + error.code + ",desc=" + error.desc + ",reason=" + error.reason;
+                  let tip = '登录失败:domain=' + error.domain + ',code=' + error.code + ',desc=' +
+                      error.desc + ',reason=' + error.reason;
                   console.log(tip);
                   uni.showToast({
                     icon: 'none',
@@ -316,32 +316,38 @@ export default {
                 }
 
                 //返回刷脸结果
-                if (scene === "wb_face_callback_verify_result") {
+                if (scene === 'wb_face_callback_verify_result') {
                   let res = result.res;
                   //success区分是否刷脸成功
                   let success = res.success;
                   if (success) {
                     //刷脸成功
                     //还可以通过res拿到orderNo，sign，userImageString(用户刷脸base64 string照片)
-                    console.log("刷脸成功:liverate=" + res.liveRate + ",similarity=" + res.similarity);
+                    console.log('刷脸成功:liverate=' + res.liveRate + ',similarity=' + res.similarity);
                     let riskInfo = res.riskInfo;
                     uni.showToast({
                       icon: 'none',
-                      title: "刷脸成功:liverate=" + res.liveRate + ",similarity=" + res.similarity + ",deviceInfoLevel=" + riskInfo.deviceInfoLevel + ",deviceInfoTag=" + riskInfo.deviceInfoTag + ",riskInfoLevel=" + riskInfo.riskInfoLevel + ",riskInfoTag=" + riskInfo.riskInfoTag
+                      title: '刷脸成功:liverate=' + res.liveRate + ',similarity=' + res.similarity +
+                          ',deviceInfoLevel=' + riskInfo.deviceInfoLevel + ',deviceInfoTag=' +
+                          riskInfo.deviceInfoTag + ',riskInfoLevel=' + riskInfo.riskInfoLevel +
+                          ',riskInfoTag=' + riskInfo.riskInfoTag
                     });
                   } else {
                     //刷脸失败
                     let error = res.error;
-                    console.log("error=" + JSON.stringify(error));
+                    console.log('error=' + JSON.stringify(error));
 
                     //可以通过domain区分是本地刷脸错误，还是人脸对比失败，
                     let domain = error.domain;
                     //如果是人脸对比失败，可以从res里拿到liveRate和similarity
-                    if (domain === "WBFaceErrorDomainCompareServer") {
-                      console.log("对比失败，liveRate=" + res.liveRate + "; similarity=" + res.similarity + ";sign=" + res.sign);
+                    if (domain === 'WBFaceErrorDomainCompareServer') {
+                      console.log(
+                          '对比失败，liveRate=' + res.liveRate + '; similarity=' + res.similarity +
+                          ';sign=' + res.sign);
                       uni.showToast({
                         icon: 'none',
-                        title: "对比失败，liveRate=" + res.liveRate + "; similarity=" + res.similarity + ";sign=" + res.sign
+                        title: '对比失败，liveRate=' + res.liveRate + '; similarity=' + res.similarity +
+                            ';sign=' + res.sign
                       });
                       return;
                     }

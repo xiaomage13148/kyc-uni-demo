@@ -145,6 +145,8 @@ export default {
           success: (res) => {
             if (res.data.code === '0') {
               const data = res.data.data;
+              // TODO ---->打印【基础版】响应结果 , 日期: 2024/3/5
+              console.log(`---->打印【基础版】响应结果 , 当前时间是: ${new Date().toString()}` , data);
               face.startWbFaceVerifyService({
                 apiVersion: data.apiVersion,
                 appId: data.appId,
@@ -264,6 +266,8 @@ export default {
           success: (res) => {
             if (res.data.code === '0') {
               const data = res.data.data;
+              // TODO ---->打印【增强版】响应结果 , 日期: 2024/3/5
+              console.log(`---->打印【增强版】响应结果 , 当前时间是: ${new Date().toString()}` , data);
               face.startAdvanceWbFaceVerifyService({
                 apiVersion: data.apiVersion,
                 appId: data.appId,

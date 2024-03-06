@@ -49,7 +49,7 @@ export default {
       const self = this;
       uni.request({
         method: 'POST',
-        url: 'http://132.126.2.15:8005/api/tencentKyc/preStartORC',
+        url: 'http://132.126.2.15:8005/api/tencentKyc/preStartOCR',
         data: {
           orderNo: self.orderNo
         },

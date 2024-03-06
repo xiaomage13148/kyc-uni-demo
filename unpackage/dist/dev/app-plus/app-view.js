@@ -726,7 +726,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../HBuilderX/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 16);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.content {\n\tdisplay: flex;\n\tflex-direction: column;\n\talign-items: center;\n\tjustify-content: center;\n}\n.text-area {\n\tdisplay: flex;\n\tjustify-content: center;\n}\n.title {\n\tfont-size: 36rpx;\n\tcolor: #8f8f94;\n}\n.img {\n\twidth: 280px;\n\theight: 160px;\n\tmargin-top: 50px;\n}\n.button {\n\tmargin-top: 20px;\n\tdisplay: flex;\n\tjustify-content: center;\n}\n.result-area {\n\tword-break: break-all;\n\tpadding: 20px;\n\tline-height: 20px;\n}\n.result-area-item {\n\tmargin-top: 10px;\n}\n", ""]);
+exports.push([module.i, "\n.content {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\n}\n.text-area {\r\n  display: flex;\r\n  justify-content: center;\n}\n.title {\r\n  font-size: 36 rpx;\r\n  color: #8f8f94;\n}\n.img {\r\n  width: 280px;\r\n  height: 160px;\r\n  margin-top: 50px;\n}\n.button {\r\n  margin-top: 20px;\r\n  display: flex;\r\n  justify-content: center;\n}\n.result-area {\r\n  word-break: break-all;\r\n  padding: 20px;\r\n  line-height: 20px;\n}\n.result-area-item {\r\n  margin-top: 10px;\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 

@@ -39,7 +39,6 @@
 </template>
 
 <script>
-import {randomString} from '../../utils/utils.js';
 import {advanceConstant, compareTypeConstant, idCardImg} from '../../utils/constant';
 //如果同时使用OCR与人脸插件，可依赖OCR与人脸即可。
 const ocr = uni.requireNativePlugin('DC-WBOCRService');
@@ -51,11 +50,6 @@ export default {
     return {
       usernameInput: '',
       useridInput: '',
-      appid: 'TIDAFy27',
-      userId: randomString(8),
-      orderNo: randomString(9),
-      nonce: randomString(32),
-      version: '1.0.0',
       basic: advanceConstant.basic,
       enhancement: advanceConstant.enhancement
     };

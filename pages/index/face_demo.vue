@@ -127,7 +127,7 @@ export default {
       if (advance === advanceConstant.basic) {
         uni.request({
           method: 'POST',
-          url: 'http://132.126.2.15:8005/api/tencentKyc/preStartWbFaceVerifyService',
+          url: 'http://132.126.2.15:8005/api/intf/tencentKyc/preStartWbFaceVerifyService',
           data: {
             name: self.usernameInput,
             idNo: self.useridInput,
@@ -140,7 +140,7 @@ export default {
             if (res.data.code === '0') {
               const data = res.data.data;
               // TODO ---->打印【基础版】响应结果 , 日期: 2024/3/5
-              console.log(`---->打印【基础版】响应结果 , 当前时间是: ${new Date().toString()}` , data);
+              console.log(`---->打印【基础版】响应结果 , 当前时间是: ${new Date().toString()}`, data);
               face.startWbFaceVerifyService({
                 apiVersion: data.apiVersion,
                 appId: data.appId,
@@ -238,6 +238,14 @@ export default {
                   res);
             }
           },
+          fail: err => {
+            // TODO ---->打印err , 日期: 2024/3/11
+            console.log(`---->打印err , 当前时间是: ${new Date().toString()}`, err);
+            uni.showToast({
+              icon: 'none',
+              title: err
+            });
+          }
         });
       } else {
         let useAdvanceCompare;
@@ -261,7 +269,7 @@ export default {
             if (res.data.code === '0') {
               const data = res.data.data;
               // TODO ---->打印【增强版】响应结果 , 日期: 2024/3/5
-              console.log(`---->打印【增强版】响应结果 , 当前时间是: ${new Date().toString()}` , data);
+              console.log(`---->打印【增强版】响应结果 , 当前时间是: ${new Date().toString()}`, data);
               face.startAdvanceWbFaceVerifyService({
                 apiVersion: data.apiVersion,
                 appId: data.appId,
